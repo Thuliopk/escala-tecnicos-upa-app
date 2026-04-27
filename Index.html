@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Escala UPA</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#3478f6">
+  <meta name="background-color" content="#07111f">
+
+  <!-- Mobile -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Escala UPA">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Ícones -->
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(52, 120, 246, 0.25), transparent 35%),
+        linear-gradient(160deg, #07111f 0%, #0d1b2f 55%, #12243d 100%);
+      color: #ffffff;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      padding: 32px 24px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(16px);
+    }
+
+    .logo {
+      width: 96px;
+      height: 96px;
+      border-radius: 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 32px rgba(52, 120, 246, 0.35);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+    }
+
+    p {
+      margin: 10px 0 24px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #a8b8d3;
+    }
+
+    .btn {
+      width: 100%;
+      border: none;
+      border-radius: 16px;
+      padding: 15px 18px;
+      font-size: 15px;
+      font-weight: 800;
+      color: #ffffff;
+      background: linear-gradient(135deg, #2563eb, #3478f6);
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.38);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .footer {
+      margin-top: 18px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.38);
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="card">
+    <img src="icon-192.png" alt="Ícone Escala UPA" class="logo">
+
+    <h1>Escala UPA</h1>
+
+    <p>
+      Aplicativo de acesso rápido ao sistema de escala mensal.
+    </p>
+
+    <button class="btn" onclick="abrirSistema()">
+      Abrir sistema
+    </button>
+
+    <div class="footer">
+      Adicione este app à tela inicial do celular para acesso rápido.
+    </div>
+  </main>
+
+  <script>
+    const LINK_WEBAPP = "https://script.google.com/macros/s/AKfycbzwyGVUCa36OENnb6CMKzoCXkMVh3lJrhObXgcMg6O--uCidKHiot1OV-lK1P4LkEVr6g/exec?app=escala";
+
+    function abrirSistema() {
+      window.location.href = LINK_WEBAPP;
+    }
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("service-worker.js")
+          .then(function () {
+            console.log("Service Worker registrado com sucesso.");
+          })
+          .catch(function (erro) {
+            console.log("Erro ao registrar Service Worker:", erro);
+          });
+      });
+    }
+  </script>
+
+</body>
+</html>
