@@ -441,8 +441,8 @@
     let deferredPrompt = null;
 
     function abrirEscala() {
-      window.location.href = LINK_ESCALA;
-    }
+  window.open(LINK_ESCALA, "_blank", "noopener,noreferrer");
+}
 
     function showToast(message) {
       const toast = document.getElementById("toast");
