@@ -500,14 +500,10 @@
 
     let deferredPrompt = null;
 
-    function abrirEscala() {
-      const tela = document.getElementById("telaEscala");
-      const frame = document.getElementById("frameEscala");
-
-      frame.src = LINK_ESCALA;
-      tela.style.display = "block";
-    }
-
+   function abrirEscala() {
+  window.location.href =
+    "intent://script.google.com/macros/s/AKfycbzwyGVUCa36OENnb6CMKzoCXkMVh3lJrhObXgcMg6O--uCidKHiot1OV-lK1P4LkEVr6g/exec?app=escala#Intent;scheme=https;package=com.android.chrome;end";
+}
     function fecharEscala() {
       const tela = document.getElementById("telaEscala");
       const frame = document.getElementById("frameEscala");
