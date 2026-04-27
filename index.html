@@ -409,9 +409,14 @@
           </div>
 
           <div class="actions">
-            <button class="btn btn-primary" onclick="abrirEscala()">
-              📅 Abrir escala
-            </button>
+            <a
+  class="btn btn-primary"
+  href="https://script.google.com/macros/s/AKfycbzwyGVUCa36OENnb6CMKzoCXkMVh3lJrhObXgcMg6O--uCidKHiot1OV-lK1P4LkEVr6g/exec?app=escala"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  📅 Abrir escala
+</a> 
 
             <button class="btn btn-install" id="btnInstall">
               📲 Instalar aplicativo
@@ -439,10 +444,6 @@
     const LINK_ESCALA = "https://script.google.com/macros/s/AKfycbzwyGVUCa36OENnb6CMKzoCXkMVh3lJrhObXgcMg6O--uCidKHiot1OV-lK1P4LkEVr6g/exec?app=escala";
 
     let deferredPrompt = null;
-
-    function abrirEscala() {
-  window.open(LINK_ESCALA, "_blank", "noopener,noreferrer");
-}
 
     function showToast(message) {
       const toast = document.getElementById("toast");
